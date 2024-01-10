@@ -1,7 +1,7 @@
 class Api::V1::ProductsController < ApplicationController
   def index
     products = Product.all
-    render json: products, status: :ok
+    render json: products, each_serializer: ProductSerializer, status: :ok
   end
 
   def create
